@@ -1,0 +1,15 @@
+version: "3.4"
+
+services:
+
+  insecure-bank:
+    build:
+      context: .
+      dockerfile: src/main/docker/Dockerfile.hdiv
+    ports:
+      - 8080:8080
+    volumes:
+      - ./agent:/agent
+    environment:
+      QUARKUS_LAUNCH_DEVMODE: "true"
+      JAVA_OPTIONS: -Dquarkus.http.host=0.0.0.0 -Djava.util.logging.manager=org.jboss.logmanager.LogManager -javaagent:/agent/hdiv-ee-agent.jar -Dhdiv.config.dir=/agent -Dhdiv.toolbar.enabled=true

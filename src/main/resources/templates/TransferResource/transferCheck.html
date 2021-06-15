@@ -1,0 +1,137 @@
+{#include header /}
+<body class="static-tables">
+
+<!-- WRAPPER -->
+<div class="wrapper">
+    <div class="container-fluid">
+        {#include topBar account=account /}
+        <div class="row">
+            <div class="col-lg-2 col-left">
+                <!-- LEFT CONTENT -->
+                <div class="left-content">
+                    <nav id="main-nav" class="main-nav">
+
+                        <h3>MAIN</h3>
+                        <ul class="main-menu">
+
+                            <li><a href="/dashboard"><i class="icon ion-ios7-speedometer"></i><span class="text">Dashboard</span></a>
+                            </li>
+                            <li><a href="/activity"><i class="icon ion-clipboard"></i><span class="text">Accounts activity</span></a>
+                            </li>
+                            <li class="has-submenu"><a href="#" class="submenu-toggle"><i
+                                    class="icon ion-android-note"></i><span class="text">Transfers</span></a>
+                                <ul class="list-unstyled sub-menu">
+                                    <li class="active"><a href="/transfer"><span
+                                            class="text">Make a transfer</span></a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+            <div class="col-lg-10 col-right ">
+                <div class="right-content">
+                    <!-- MAIN CONTENT -->
+                    <div class="main-content">
+                        <div class="primary-content">
+                            <div class="heading clearfix">
+                                <h2>MAKE A TRANSFER</h2>
+                            </div>
+
+                            <div class="widget-content">
+                                <h4>DETAILS CONFIRMATION</h4>
+                                <table id="user" class="table table-bordered table-striped">
+                                    <tbody>
+                                    <tr>
+                                        <td><label class="col-md-4 control-label">From Account</label></td>
+                                        <td>{transfer.fromAccount}</td>
+                                    </tr>
+                                    <tr>
+                                        <td><label class="col-md-4 control-label">Send To</label></td>
+                                        <td>{transfer.toAccount}</td>
+                                    </tr>
+                                    <tr>
+                                        <td><label class="col-md-4 control-label">Description</label></td>
+                                        <td>{transfer.description.raw}</td>
+                                    </tr>
+                                    <tr>
+                                        <td><label class="col-md-4 control-label">Amount</label></td>
+                                        <td>{transfer.amount} &#8364;</td>
+                                    </tr>
+                                    <tr>
+                                        <td><label class="col-md-4 control-label">Fee</label></td>
+                                        <td>{transfer.fee} &#8364;</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <!-- RESPONSIVE TABLE -->
+                            <div class="widget">
+                                <div class="widget-header clearfix">
+                                    <h3>
+                                        <i class="fa fa-list-alt"></i> <span>Find the number 243 and enter the corresponding code:</span>
+                                    </h3>
+                                </div>
+                                <div class="widget-content">
+                                    <form method="POST" class="form-horizontal" role="form" action="/transfer/confirm">
+                                        <div class="form-group">
+                                            <label class="col-md-2 control-label">Code</label>
+                                            <div class="col-md-1">
+                                                <input name="code" value="{operationConfirm.code}" type="text" class="form-control" maxlength="4"/>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <button type="submit" class="btn btn-primary" name="action" value="confirm">Confirm
+                                                </button>
+                                                <button type="submit" class="btn btn-primary" name="action" value="cancel">Cancel
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- END MAIN CONTENT -->
+        </div>
+    </div>
+</div>
+<div class="left-content-bg col-md-2"></div>
+<!-- END WRAPPER -->
+
+<!-- Javascript -->
+<script src="/js/jquery/jquery-2.1.0.min.js"></script>
+<script src="/js/bootstrap/bootstrap.js"></script>
+<script src="/js/plugins/jquery-slimscroll/jquery.slimscroll.min.js"></script>
+<script src="/js/plugins/stat/jquery-easypiechart/jquery.easypiechart.min.js"></script>
+<script src="/js/plugins/bootstrap-multiselect/bootstrap-multiselect.js"></script>
+<script src="/js/queen-common.js"></script>
+</body>
+<style>
+    table {
+        table-layout: fixed;
+    }
+
+    btn-align-center {
+        text-align: right;
+    }
+
+    table th, table td {
+        overflow: hidden;
+    }
+
+    .fa-logo {
+        color: #fff;
+        font-size: 18px;
+    }
+
+    .logo-text {
+        color: #fff;
+        font-family: 'Oswald';
+        font-size: 16px;
+    }
+
+</style>
+{#include footer /}
