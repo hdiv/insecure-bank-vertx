@@ -20,4 +20,4 @@ services:
       - ./agent:/agent
     environment:
       QUARKUS_LAUNCH_DEVMODE: "true"
-      JAVA_OPTIONS: -Dquarkus.http.host=0.0.0.0 -Djava.util.logging.manager=org.jboss.logmanager.LogManager -javaagent:/agent/hdiv-ee-agent.jar -Dhdiv.config.dir=/agent -Dhdiv.single.app=true -Dhdiv.toolbar.enabled=true
+      JAVA_OPTIONS: -Dquarkus.http.host=0.0.0.0 -Djava.util.logging.manager=org.jboss.logmanager.LogManager -javaagent:/agent/hdiv-ee-agent.jar -Dhdiv.config.dir=/agent -Dhdiv.single.app=true -Dhdiv.toolbar.enabled=true -Dhdiv.file.level=FINE
