@@ -15,7 +15,7 @@
 
 4. If you want to run the application with the agent enabled, place Hdiv agent and license in the ``agent`` root folder and run:
 
-        $ ./mvnw quarkus:dev -Djvm.args="-javaagent:$(pwd)/agent/hdiv-ee-agent.jar -Dhdiv.config.dir=$(pwd)/agent -Dhdiv.toolbar.enabled=true"
+        $ ./mvnw quarkus:dev -Djvm.args="-javaagent:$(pwd)/agent/hdiv-ee-agent.jar -Dhdiv.config.dir=$(pwd)/agent -Dhdiv.single.app=true -Dhdiv.toolbar.enabled=true"
 
 ## Running with Docker
 
