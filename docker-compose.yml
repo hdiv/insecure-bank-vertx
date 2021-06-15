@@ -1,13 +1,21 @@
 version: "3.4"
 
+x-insecure-bank-base: &insecure-bank-base
+  build:
+    context: .
+    dockerfile: src/main/docker/Dockerfile.jvm
+  ports:
+   - 8080:8080
+
 services:
 
   insecure-bank:
-    build:
-      context: .
-      dockerfile: src/main/docker/Dockerfile.hdiv
-    ports:
-      - 8080:8080
+    <<: *insecure-bank-base
+    environment:
+      QUARKUS_LAUNCH_DEVMODE: "true"
+
+  insecure-bank-agent:
+    <<: *insecure-bank-base
     volumes:
       - ./agent:/agent
     environment:
