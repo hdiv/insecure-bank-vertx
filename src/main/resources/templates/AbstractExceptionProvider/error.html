@@ -1,0 +1,64 @@
+{#include header /}
+<body class="static-tables">
+
+<!-- WRAPPER -->
+<div class="wrapper">
+    <div class="container-fluid">
+        <!-- TOP BAR -->
+        <nav class="top-bar navbar-fixed-top" role="navigation">
+            <div class="row">
+                <div class="col-md-2 col-sm-4 col-xs-7">
+                    <a class="btn btn-link btn-off-canvas pull-left"><i class="icon ion-navicon"></i></a>
+                    <div class="logo pull-left">
+                        <i class="fa fa-university fa-logo"></i> <span class="logo-text">Insecure Bank </span>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <!-- END TOP BAR -->
+        <div class="row">
+            <div class="col-lg-12 col-right">
+                <div class="main-content">
+                    <div class="primary-content">
+                        <div class="heading clearfix">
+                            <h2>Error {statusCode}</h2>
+                        </div>
+                        <div>
+                            <p class="lead">{message}</p>
+                        </div>
+                        <div>
+                            <p>Technical Contact: <a href="mailto:support@hdivsecurity.com">support@hdivsecurity.com</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+<style>
+    table {
+        table-layout: fixed;
+    }
+
+    btn-align-center {
+        text-align: right;
+    }
+
+    table th, table td {
+        overflow: hidden;
+    }
+
+    .fa-logo {
+        color: #fff;
+        font-size: 18px;
+    }
+
+    .logo-text {
+        color: #fff;
+        font-family: 'Oswald';
+        font-size: 16px;
+    }
+
+</style>
+{#include footer /}

@@ -1,0 +1,137 @@
+{#include header /}
+<body class="static-tables">
+
+<!-- WRAPPER -->
+<div class="wrapper">
+    <div class="container-fluid">
+        {#include topBar account=account /}
+        <div class="row">
+            <div class="col-lg-2 col-left">
+                <!-- LEFT CONTENT -->
+                <div class="left-content">
+                    <nav id="main-nav" class="main-nav">
+
+                        <h3>MAIN</h3>
+                        <ul class="main-menu">
+                            <li><a href="/activity"><i class="icon ion-ios7-speedometer"></i><span class="text">Dashboard</span></a></li>
+                            <li><a href="/dashboard"><i class="icon ion-clipboard"></i><span class="text">Accounts activity</span></a></li>
+                            <li class="has-submenu"><a href="#" class="submenu-toggle"><i
+                                    class="icon ion-android-note"></i><span class="text">Transfers</span></a>
+                                <ul class="list-unstyled sub-menu">
+                                    <li class="active"><a href="/transfer"><span
+                                            class="text">Make a transfer</span></a></li>
+                                </ul></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+            <div class="col-lg-10 col-right ">
+                <div class="right-content">
+                    <!-- MAIN CONTENT -->
+                    <div class="main-content">
+                        <div class="primary-content">
+                            <div class="heading clearfix">
+                                <h2>MAKE A TRANSFER</h2>
+                                <ul class="breadcrumb pull-left">
+                                    <li><i class="icon ion-home"></i><a href="/dashboard">Home</a></li>
+
+                                    <li><a href="/transfer">Transfers</a></li>
+                                    <li><a href="/transfer">Make a transfer</a></li>
+                                    <li>Transfer confirmation</li>
+                                </ul>
+                            </div>
+                            <!-- RESPONSIVE TABLE -->
+
+                            <div class="widget">
+                                <div class="widget-header clearfix">
+                                    <h3><i class="icon ion-compose"></i> <span>TRANSFER CONFIRMATION</span></h3>
+                                </div>
+                                <div class="widget-content">
+                                    <div class="alert alert-success fade in">
+                                        <button class="close" data-dismiss="alert">�</button>
+                                        <i class="icon ion-checkmark-circled"></i>
+                                        <strong>Success!</strong> You have successfully made the transfer.
+                                    </div>
+                                    <table id="user" class="table table-bordered table-striped">
+                                        <tbody>
+                                        <tr>
+                                            <td><label class="col-md-2 control-label">From</label></td>
+                                            <td>{account.name} {account.surname}</td>
+                                        </tr>
+                                        <tr>
+                                            <td><label class="col-md-4 control-label">Account Type</label></td>
+                                            <td>{accountType}</td>
+                                        </tr>
+                                        <tr>
+                                            <td><label class="col-md-4 control-label">From Account</label></td>
+                                            <td>{transfer.fromAccount}</td>
+                                        </tr>
+                                        <tr>
+                                            <td><label class="col-md-4 control-label">Send To</label></td>
+                                            <td>{transfer.toAccount}</td>
+                                        </tr>
+                                        <tr>
+                                            <td><label class="col-md-4 control-label">Description</label></td>
+                                            <td>{transfer.description}</td>
+                                        </tr>
+                                        <tr>
+                                            <td><label class="col-md-4 control-label">Amount</label></td>
+                                            <td>{transfer.amount} &#8364;</td>
+                                        </tr>
+                                        <tr>
+                                            <td><label class="col-md-4 control-label">Fee</label></td>
+                                            <td>{transfer.fee} &#8364;</td>
+                                        </tr>
+                                        <tr>
+                                            <td><label class="col-md-4 control-label">Date</label></td>
+                                            <td>{time:format(transfer.date,'dd-MM-yyyy HH:mm')}</td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- END MAIN CONTENT -->
+        </div>
+    </div>
+</div>
+<div class="left-content-bg col-md-2"></div>
+<!-- END WRAPPER -->
+
+<!-- Javascript -->
+<script src="/js/jquery/jquery-2.1.0.min.js"></script>
+<script src="/js/bootstrap/bootstrap.js"></script>
+<script src="/js/plugins/jquery-slimscroll/jquery.slimscroll.min.js"></script>
+<script src="/js/plugins/stat/jquery-easypiechart/jquery.easypiechart.min.js"></script>
+<script src="/js/plugins/bootstrap-multiselect/bootstrap-multiselect.js"></script>
+<script src="/js/queen-common.js"></script>
+</body>
+<style>
+    table {
+        table-layout: fixed;
+    }
+
+    btn-align-center {
+        text-align: right;
+    }
+
+    table th, table td {
+        overflow: hidden;
+    }
+
+    .fa-logo {
+        color: #fff;
+        font-size: 18px;
+    }
+
+    .logo-text {
+        color: #fff;
+        font-family: 'Oswald';
+        font-size: 16px;
+    }
+
+</style>
+{#include footer /}
